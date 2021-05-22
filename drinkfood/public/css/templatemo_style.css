@@ -414,6 +414,12 @@ img {
     padding: 0px 10px !important;
     background: black;
 }
+
+#rating{
+	border: 1px solid;
+    width: 200px;
+    box-sizing: border-box;
+}
 /* end of content */
 
 /* footer */

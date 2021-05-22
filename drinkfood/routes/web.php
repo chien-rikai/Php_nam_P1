@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Public\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('public/pages/home');
-});
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/product', function () {
-    return view('public/pages/product');
-});
+Route::get('/product', [HomeController::class, 'product'])->name('product');
 
-Route::get('/product/{type_name}/{url_key}', function () {
-    return view('public/pages/product_detail');
-});
+Route::get('/product/{type_name}/{cat_name}/{url_key}', [HomeController::class, 'product_detail'])->name('product.detail');
