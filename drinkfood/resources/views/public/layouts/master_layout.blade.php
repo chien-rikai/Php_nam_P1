@@ -11,6 +11,8 @@
     @include('public/layouts/elements/js')
 </head>
 <body>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e038ca9298e95c8"></script>
 
     {{-- Begin: Layout --}}
     <div id="templatemo_container">
