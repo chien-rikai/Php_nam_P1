@@ -14,6 +14,13 @@ use App\Http\Controllers\Public\HomeController;
 */
 Route::group(['middleware' => 'language'], function()
 {
+    /* Begin: Route thay doi ngon ngu */
     Route::get('/language/{lang}', [HomeController::class, 'language'])->name('language');
-    Route::get('/', [HomeController::class, 'home'])->name('public_home');
+
+    /* Begin: Route trang home */
+    Route::resource('/', 'App\Http\Controllers\Public\HomeController', ['name'=>['index' => 'home.index']]);
+    
+    /* Begin: Route trang product */
+    Route::resource('product', 'App\Http\Controllers\Public\ProductController', ['name'=>['index' => 'product.list']]);
+
 });
