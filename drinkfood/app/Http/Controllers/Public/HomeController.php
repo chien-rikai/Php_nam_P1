@@ -8,14 +8,9 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    function home()
+    function index()
     {
-        return view('public/pages/home');
-    }
-
-    function product()
-    {
-        return view('public/pages/product');
+        return view('public.pages.home');
     }
 
     function language($lang)
