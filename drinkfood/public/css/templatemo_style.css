@@ -388,9 +388,18 @@ img {
 	margin-bottom: 15px;
 }
 
+.no_rating:hover{
+	color: yellow !important;
+}
+
 .rating{
 	margin-bottom: 5px;
 	color: yellow;
+}
+
+.price{
+	font-size: 16px;
+	color: coral;
 }
 
 .pagination_bar {
@@ -663,7 +672,20 @@ img {
 		padding: 10px 0px;
 	}
 
+	.info_product{
+		width:100%;
+		padding: 0 0 0 0px !important;
+	}
+
 	.box_img {
+		width: 100%;
+	}
+
+	.image_panel{
+		width: 100% !important;
+	}
+
+	.image_panel img{
 		width: 100%;
 	}
 
