@@ -178,6 +178,7 @@ return [
         App\Providers\UploadFileProvider::class,
         App\Providers\ConditionQueryProvider::class,
         App\Providers\OrderProvider::class,
+        App\Providers\CartProvider::class,
 
         Laravel\Socialite\SocialiteServiceProvider::class,
 

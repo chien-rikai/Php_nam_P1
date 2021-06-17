@@ -56,4 +56,8 @@ Route::group(['middleware' => 'language'], function()
 
     /* Route ratings product */
     Route::post('ratings', 'App\Http\Controllers\Public\RatingController@storeRatings');
+
+    Route::get('/emailorder', function(){
+        return view('email.orders');
+    });
 });
