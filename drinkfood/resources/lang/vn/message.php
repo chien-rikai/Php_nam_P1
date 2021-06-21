@@ -108,6 +108,8 @@
         'delete_product_order_success' => 'Xóa sản phẩm thành công',
         'status_order' => '{0} Chưa hoàn tất |{1} Đang Chờ Xử Lý |{2} Đã Xử Lý |{3} Đang Giao Hàng |{4} Hoàn Tất |{5} Đã Hủy',
         'error_order' => 'Có lỗi khi đặt đơn hàng. Vui lòng thử lại',
+        'delete_order_success' => 'Xóa đơn hàng thành công',
+        'delete_order_error' => 'Không thể xóa đơn hàng. Vui lòng thử lại',
         
         /* Send email */
         'send_mail_success' => 'Thông tin đã được gửi đến email của bạn. Vui lòng kiểm tra lại email của bạn',

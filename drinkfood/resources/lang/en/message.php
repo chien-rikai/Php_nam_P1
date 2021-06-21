@@ -110,6 +110,8 @@
         'delete_product_order_success' => 'Delete product successfully',
         'status_order' => '{0} Unfinished |{1} Awaiting Processing |{2} Processed |{3} On Delivery |{4} Completed |{5} Cancelled',
         'error_order' => 'There was an error placing the order. Please try again',
+        'delete_order_success' => 'Deleted order successfully',
+        'delete_order_error' => 'The order cannot be deleted. Please try again',
 
         /* Send email */
         'send_mail_success' => 'Information has been sent to your email. Please check your email again',
