@@ -17,6 +17,7 @@
         'manager_user' => 'Quản lý người dùng',
         'list_products' => 'Danh sách sản phẩm',
         'list_categories' => 'Danh sách danh mục',
+        'list_searchs' => 'Kết quả tìm kiếm',
 
         // Website element
         'slogant' => 'Website đặt hàng uy tín nhất Đà Nẵng',
@@ -69,12 +70,14 @@
         'quantity' => 'Số lượng:',
         'total'=>'Tổng cộng:',
         'all' => 'Tất cả',
+        'ratio' => 'Tỷ lệ',
         'start_price' => 'Giá bắt đầu',
         'end_price' => 'Giá kết thúc',
         'choose_rating' => 'Chọn số sao',
         'category_name' => 'Tên danh mục',
         'date_created' => 'Ngày tạo',
         'description' => 'Mô tả',
+        'user' => 'Người dùng',
 
         /* Error validate form */
         'err_fullname' => 'Vui lòng nhập đầy đủ họ và tên của bạn',
@@ -139,7 +142,7 @@
         'send_mail_error' => 'Lỗi khi gửi email',
 
         /* Email */
-        'email_title' => '{1} XÁC NHẬN THÔNG TIN ĐƠN HÀNG |{2} XÁC NHẬN CẬP NHẬT MẬT KHẨU THÀNH CÔNG |{3} XÁC NHẬN THÔNG TIN ĐĂNG KÝ',
+        'email_title' => '{1} XÁC NHẬN THÔNG TIN ĐƠN HÀNG |{2} XÁC NHẬN CẬP NHẬT MẬT KHẨU THÀNH CÔNG |{3} XÁC NHẬN THÔNG TIN ĐĂNG KÝ |{4} THỐNG KÊ DOANH THU CUỐI THÁNG',
         'attention_reset_pass' => 'Chú ý: Hãy đổi mật khẩu này sau khi cập nhật xong',
         'how_to_login' => 'Cách đăng nhập:',
         'how_to_login_tutorial' => '{1} -Cách 1: Đăng nhập với tài khoản Google hoặc Facebook mà bạn đã đăng ký với chúng tôi.|{2} -Cách 2: Đăng nhập trực tiếp với email và password trên form đăng nhập.',

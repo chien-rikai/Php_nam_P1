@@ -5,7 +5,9 @@ use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Public\SearchController;
-
+use App\Http\Controllers\Public\SendMailController;
+use App\Models\Order;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,7 +75,11 @@ Route::resource('login', 'App\Http\Controllers\Admin\LoginController');
 Route::get('logout', 'App\Http\Controllers\Admin\LoginController@logout')->name('admin.logout');
 Route::prefix('/admin')->group(function () {
     Route::middleware(['CheckLoginAdmin', 'language'])->group(function () {
+        /* Route fulltext search */
+        Route::get('/fsearch', 'App\Http\Controllers\Admin\SearchController@search')->name('admin.fsearch');
+
         Route::get('/', 'App\Http\Controllers\Admin\AdminController@index')->name('admin.dashboard');
+        Route::get('/export/statistics', 'App\Http\Controllers\ExportExcelController@exportStatistics')->name('admin.export.statistics');
 
         /* Route manager product */
         Route::resource('/product', 'App\Http\Controllers\Admin\ProductController');
@@ -82,7 +88,9 @@ Route::prefix('/admin')->group(function () {
 
         /* Route manage category */
         Route::resource('/category', 'App\Http\Controllers\Admin\CategoryController');
-        
+        Route::post('/category/change_status/{uid_category}', 'App\Http\Controllers\Admin\CategoryController@changeStatus')->name('category.change_status');
+        Route::get('/category/get_product/{id_category}', 'App\Http\Controllers\Admin\CategoryController@showProduct')->name('category.get_product');
+
         /* Route manage user */
         Route::resource('/user', 'App\Http\Controllers\Admin\UserController')->only('index', 'create', 'store', 'edit', 'update', 'show');
         Route::get('/user/block/{uidUser}', 'App\Http\Controllers\Admin\UserController@blockUser')->name('user.block');
@@ -90,7 +98,6 @@ Route::prefix('/admin')->group(function () {
         Route::get('/user/reset_password/{email}', 'App\Http\Controllers\Admin\UserController@resetPassword')->name('user.reset_password');
 
         /* Route manager order */
-        Route::resource('/order', 'App\Http\Controllers\Admin\OrderController')->only('index', 'show', 'update');
-
+        Route::resource('/order', 'App\Http\Controllers\Admin\OrderController')->only('index', 'show', 'update');    
     });
 });

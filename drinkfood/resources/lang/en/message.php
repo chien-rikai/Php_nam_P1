@@ -17,6 +17,7 @@
         'manager_user' => 'Users manager',
         'list_products' => 'Products list',
         'list_categories' => 'Categories list',
+        'list_searchs' => 'Search results',
 
         // Element website
         'slogant' => 'The most prestigious ordering website in Da Nang',
@@ -76,6 +77,7 @@
         'category_name' => 'Category name',
         'date_created' => 'Date created',
         'description' => 'Description',
+        'user' => 'User',
 
         /* Error validate form */
         'err_fullname' => 'Please enter the full them and your name',
@@ -141,7 +143,7 @@
         'send_mail_error' => 'Error sending email',
 
         /* Email */
-        'email_title' => '{1} CONFIRM ORDER INFORMATION |{2} CONFIRM PASSWORD UPDATE SUCCESSFUL |{3} CONFIRM OF REGISTRATION INFORMATION',
+        'email_title' => '{1} CONFIRM ORDER INFORMATION |{2} CONFIRM PASSWORD UPDATE SUCCESSFUL |{3} CONFIRM OF REGISTRATION INFORMATION |{4} MONTH-END REVENUE STATISTICS',
         'attention_reset_pass' => 'Attention: Please change this password after update is complete',
         'how_to_login' => 'How to login:',
         'how_to_login_tutorial' => '{1} - Method 1: Sign in with the Google or Facebook account that you have registered with us.|{2} - Method 2: Login directly with the email and password provided on the login form.',
