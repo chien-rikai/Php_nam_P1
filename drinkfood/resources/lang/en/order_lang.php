@@ -17,5 +17,6 @@
         'update_status_order_error' => 'Update status of order not success. Please try again',
         'orders_sold' => 'Orders sold',
         'orders' =>'Orders',
+        'date' => 'Date',
     ]
 ?>
