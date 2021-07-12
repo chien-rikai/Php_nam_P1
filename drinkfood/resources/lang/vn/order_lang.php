@@ -17,5 +17,6 @@
         'update_status_order_error' => 'Cập nhật trạng thái đơn hàng không thành công. Vui lòng thử lại',
         'orders_sold' => 'Đơn hàng đã bán',
         'orders' =>'Đơn hàng',
+        'date' => 'Ngày',
     ]
 ?>

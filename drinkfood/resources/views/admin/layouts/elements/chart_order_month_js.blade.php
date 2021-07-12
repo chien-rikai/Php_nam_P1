@@ -25,12 +25,20 @@
         month[10] = "11";
         month[11] = "12";
     
+      var paramDate = "<?php echo request()->date?>";
       var paramMonth = "<?php echo request()->month?>";
-      if(paramMonth != "") strMonth = paramMonth;
-      else strMonth = month[new Date().getMonth()];
+      if(paramDate != "" && paramMonth != "") 
+      {
+        strDate = paramDate + '/' + paramMonth + '/' + new Date().getFullYear();  
+      }else{
+        var date = new Date().getDate();
+        var month = month[new Date().getMonth()];
+        var year = new Date().getFullYear();
+        strDate = date+'/'+month+'/'+year;
+      }
 
       var options = {
-        title: "<?php echo trans('chart_lang.title_chart_1');?>" + '  '+ strMonth + '/' + new Date().getFullYear(),
+        title: "<?php echo trans('chart_lang.title_chart_1');?>" + '  '+ strDate,
         pieHole: 0.4,
       };
 
