@@ -5,6 +5,8 @@ use App\Models\OrderDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Public\SendMailController;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\SendMailOrderJob;
+use Illuminate\Support\Carbon;
 
 Class OrderService
 {
@@ -54,24 +56,12 @@ Class OrderService
     /* Function send email info order */
     private function sendEmailOrder($idOrder)
     {
-        $sendMailController = new SendMailController;
+        $userFullname = Auth::user()->fullname;
+        $userEmail = Auth::user()->email;
 
-        /* Get info orders */
-        $infoOrder = Order::where('id', $idOrder)->select('name', 'total_amount', 'status', 'url_key', 'uid','updated_at')->get()->toArray();
-        $detailOrder = OrderDetail::where('id_order', $idOrder)->select('id_product', 'quantity', 'unit_price')->get()->toArray();
+        $sendMailOrderJob = (new SendMailOrderJob($idOrder, $userFullname, $userEmail));
+        return dispatch($sendMailOrderJob);
 
-        $email_received = Auth::user()->email;
-        $email_content = [
-            'infoUser' => [
-                'fullname' => Auth::user()->fullname,
-                'email' => Auth::user()->email,
-            ],
-            'infoOrder' => $infoOrder,
-            'detailOrder' => $detailOrder,
-            
-        ];
-        
-        return $sendMailController->sendMailOrders($email_received, $email_content);
     }
 }
 
