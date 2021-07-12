@@ -16,7 +16,7 @@
         <ul>
             <li>{{ trans('message.store') }}: {{$product[0]->brand}}</li>
             <li>{{ trans('message.category') }}: {{$product[0]->cat_name}}</li>
-            <li>{{ trans('message.price') }}: {{$product[0]->price}}</li>
+            <li>{{ trans('message.price') }}: {{number_format($product[0]->price, 0, '', ',').' VND'}}</li>
             <li>{{ trans('message.rating') }}: <span class="ratings">{!!showRating($product[0]->id)!!}</span></li>
             <li>{{ trans('message.user_post') }}: {{$product[0]->user_fullname}}</li>
         </ul>

@@ -116,9 +116,23 @@ class CategoryController extends Controller
 
     public function changeStatus(Request $request)
     {
-        $category['status'] = $request->status;
-        $statusUpdate = Category::where('uid', $request->uidCategory)->update($category);
-        return ['sttUpdate' => $statusUpdate, 'message'=>trans_choice('message.hidden', $request->status)];
+        DB::beginTransaction();
+        try {
+            $category['status'] = $request->status;
+            Category::where('uid', $request->uidCategory)->update($category);
+            
+            $idCat = Category::where('uid', $request->uidCategory)->value('id');
+            
+            /* Update status product of category*/
+            $product['status'] = $request->status;
+            Product::where('id_cat', $idCat)->update($product);
+            
+            DB::commit();
+            return ['sttUpdate' => true, 'message'=>trans_choice('message.hidden', $request->status)];
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return ['sttUpdate' => false, 'message'=>trans_choice('message.hidden', $request->status)];
+        }
     }
 
     public function showProduct(Request $request)
