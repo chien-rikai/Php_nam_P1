@@ -6,8 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Searchable
 {
     use HasFactory, Notifiable;
 
@@ -82,5 +84,14 @@ class User extends Authenticatable
     {
         return User::where([['type', '=', config('enums.userTypes.admin')], ['status', '=', config('enums.userStatus.active')]])
                         ->select('email')->get()->toArray();
+    }
+
+    /* Function search of object searchable */
+    public function getSearchResult(): SearchResult
+    {
+        return new SearchResult(
+            $this,
+            $this->fullname,
+        );
     }
 }
