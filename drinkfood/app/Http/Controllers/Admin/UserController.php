@@ -69,16 +69,14 @@ class UserController extends Controller
     public function show($uid)
     {
         $user = $this->findUser($uid);
-        $users = $user->get();
-        return view('admin.pages.users.user_detail', ['users'=>$users]);
+        return view('admin.pages.users.user_detail', ['users'=>$user]);
 
     }
 
     public function edit($uidUser)
     {
         $user = $this->findUser($uidUser);
-        $users = $user->get();
-        return view('admin.pages.users.user_edit', ['users'=>$users]);
+        return view('admin.pages.users.user_edit', ['users'=>$user]);
     }
 
     public function update(UpdateUserRequest $request, UploadFileService $uploadFileService, $uidUser)
